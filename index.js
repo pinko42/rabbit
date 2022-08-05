@@ -1,4 +1,3 @@
-const readline = require("readline");
 const res = require("./response.json");
 
 const prompt = require("prompt");
@@ -18,6 +17,7 @@ var schema = {
 
 prompt.start();
 
+//uncomment below to have cheapest direct sailing anc comment the cheapest direct and indirect sailing
 
 //PLS-0001
 /*prompt.get(schema, function (err, result) {
@@ -45,6 +45,7 @@ prompt.start();
   process.exit(0);
 });
 */
+
 //WRT-0002
 prompt.get(schema, function (err, result) {
   if (err) {
@@ -122,12 +123,6 @@ prompt.get(schema, function (err, result) {
 
   process.exit(0);
 });
-
-
-
-
-
-
 
 
 function onErr(err) {
