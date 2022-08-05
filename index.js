@@ -112,7 +112,7 @@ prompt.get(schema, function (err, result) {
   }).filter(elem => elem != undefined).find((elem,index,arr) => parseFloat(elem[0].orgElem.rate)+parseFloat(elem[0].destElem.rate) == Math.min(...arr.map(el =>  parseFloat(el[0].orgElem.rate)+parseFloat(el[0].destElem.rate))));
   directSailArr.find((elem,index,arr) => elem.rate == Math.min(...arr.map(elem =>  elem.rate)));
 
-  if(parseFloat(indirectSail[0].orgElem.rate)+parseFloat(indirectSail[0].destElem.rate) > directSailArr.find((elem,index,arr) => elem.rate == Math.min(...arr.map(elem =>  elem.rate)))){
+  if(parseFloat(indirectSail[0].orgElem.rate)+parseFloat(indirectSail[0].destElem.rate) > parseFloat(directSailArr.find((elem,index,arr) => elem.rate == Math.min(...arr.map(elem =>  elem.rate)))).rate){
     cheapest = directSailArr.find((elem,index,arr) => elem.rate == Math.min(...arr.map(elem =>  elem.rate)));
   } else {
     cheapest = [originSailArr.find(elem => elem.sailing_code === indirectSail[0].orgElem.sailing_code ),destinationArr.find(elem => elem.sailing_code === indirectSail[0].destElem.sailing_code )]
